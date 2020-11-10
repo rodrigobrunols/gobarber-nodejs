@@ -116,5 +116,5 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node
 
 #Ignore all files inside the folder but not the folder it self
-tmp/*
-!tmp/.gitkeep
+temp/*
+!temp/.gitkeep
