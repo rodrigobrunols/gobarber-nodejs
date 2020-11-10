@@ -21,7 +21,6 @@ appointmentRouter.get('/' , async(request, response) =>{
 
 appointmentRouter.post('/' , async (request, response) => {
 
-  try{
   const {provider_id , date} = request.body;
 
   const parsedDate = parseISO(date);
@@ -31,12 +30,6 @@ appointmentRouter.post('/' , async (request, response) => {
   const appointment = await createAppointmentsService.execute({date:parsedDate , provider_id})
 
   response.json({ appointment})
-
-}catch (err) {
-
-  return response.status(400).json({error:err.message});
-
-}
 
 });
 

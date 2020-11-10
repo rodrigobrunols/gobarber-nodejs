@@ -14,14 +14,8 @@ const {name, email, password} = request.body;
 
 const createUsersService = new CreateUsersService();
 
-try{
-
   const user =  await createUsersService.execute({name, email, password});
   return response.status(201).json(user);
-
-}catch (err) {
-  return response.status(400).json({error:err.message});
-}
 
 });
 
@@ -29,7 +23,6 @@ usersRouter.patch('/avatar' ,
 ensureAuthenticated,
 upload.single('avatar'),
 async (request, response) =>{
-  try{
      const updateUserAvatarService = new UpdateUserAvatarService();
 
      const user = await updateUserAvatarService.execute({
@@ -38,10 +31,6 @@ async (request, response) =>{
         avatarFileName : request.file.filename
       })
       return response.json(user);
-    }catch(err){
-      return response.status(400).json({error:err.message});
-    }
-
 })
 
 
