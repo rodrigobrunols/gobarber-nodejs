@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import User from '../infra/typeorm/entities/User';
 import {getRepository} from 'typeorm'
 import {compare} from 'bcryptjs';

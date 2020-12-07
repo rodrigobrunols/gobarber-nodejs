@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import User from '@modules/users/infra/typeorm/entities/User'
 import path from 'path';
 import uploadConfig from '@config/upload';
