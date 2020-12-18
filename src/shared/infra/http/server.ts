@@ -10,6 +10,7 @@ import AppError from '@shared/errors/AppError';
 import appExceptionHandler from './middlewares/exceptionHandler';
 import '@shared/container';
 
+
 const app = express();
 
 app.use(express.json());
