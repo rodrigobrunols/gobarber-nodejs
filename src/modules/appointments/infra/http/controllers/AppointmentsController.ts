@@ -1,4 +1,4 @@
-import CreateAppointementsService from "@modules/appointments/services/CreateAppointementsService";
+import CreateAppointementsService from "@modules/appointments/services/CreateAppointmentsService";
 import {container} from 'tsyringe';
 import {parseISO} from 'date-fns';
 import {Request,Response } from 'express';
