@@ -9,7 +9,7 @@ class FakeUserTokensRepository implements IUserTokensRepository {
   public async generate(user_id: string): Promise<UserToken> {
     const userToken = new UserToken();
 
-    Object.assign({
+    Object.assign(userToken,{
         id:uuid(),
         token: uuid(),
         user_id
@@ -20,7 +20,13 @@ class FakeUserTokensRepository implements IUserTokensRepository {
     return userToken;
   }
 
+  public async findByToken(token: string): Promise<UserToken | undefined> {
 
+   const userToken = this.userTokenRepository.find(
+      userToken =>userToken.token === token );
 
+    return userToken;
+
+  }
 }
 export default FakeUserTokensRepository;
